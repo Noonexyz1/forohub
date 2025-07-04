@@ -1,4 +1,4 @@
-package com.forohub.controller;
+package com.forohub.infrastructure.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
