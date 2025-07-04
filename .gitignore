@@ -1,0 +1,19 @@
+# Archivos y directorios de IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Directorios de compilación de pruebas y resultados
+/target/
+/build/
+*.class
+/coverage/
+*.exec
+
+# Archivos de la JVM (generalmente no se versionan)
+*.jks
+
+# Archivos de sistema operativo comunes
+.DS_Store
+Thumbs.db
