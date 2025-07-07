@@ -2,7 +2,7 @@ package com.forohub.infrastructure.controller;
 
 import com.forohub.application.port.in.ForohubService;
 import com.forohub.domain.model.Curso;
-import com.forohub.infrastructure.mapper.MapperInfra;
+import com.forohub.infrastructure.mapper.MapperApi;
 import com.forohub.infrastructure.model.CursoRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +29,7 @@ public class ForohubController {
     public ResponseEntity<List<CursoRes>> obtenerCursos() {
         List<Curso> listaDeCursos = forohubService.obtenerCursos();
         List<CursoRes> listCursoRes = listaDeCursos.stream()
-                .map(MapperInfra::fromCursoToCursoRes)
+                .map(MapperApi::fromCursoToCursoRes)
                 .toList();
         return new ResponseEntity<>(listCursoRes, HttpStatus.OK);
     }

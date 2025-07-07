@@ -11,19 +11,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "respuesta")
-public class Respuesta {
+@Table(name = "perfil")
+public class PerfilEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String mensaje;
-    private String fechaCreacion;
-    private String solucion;
-
+    private String nombre;
 
     @ManyToOne
-    private Topico topico;
-
-    @ManyToOne
-    private Usuario autor;
+    private UsuarioEntity usuario;
 }

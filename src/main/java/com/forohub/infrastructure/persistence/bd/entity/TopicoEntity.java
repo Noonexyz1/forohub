@@ -13,15 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "curso")
-public class Curso {
+@Table(name = "topico")
+public class TopicoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String categoria;
+    private String titulo;
+    private String mensaje;
+    private String fechaCreacion;
 
-    //Aqui pongo mis relaciones
-    @OneToMany(mappedBy = "curso")
-    private List<Topico> topicos;
+    //TODO, Quiza un enum
+    private String status;
+
+    @ManyToOne
+    private UsuarioEntity autor;
+
+    @ManyToOne
+    private CursoEntity curso;
+
+
+    @OneToMany(mappedBy = "topico")
+    private List<RespuestaEntity> respuestas;
 }

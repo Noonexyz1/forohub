@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,11 +24,11 @@ public class Usuario {
 
     //Aqui hago mis mapeos
     @OneToMany(mappedBy = "autor")
-    private List<Topico> topicos;
+    private List<TopicoEntity> topicos;
 
     @OneToMany(mappedBy = "autor")
-    private List<Respuesta> respuestas;
+    private List<RespuestaEntity> respuestas;
 
     @OneToMany(mappedBy = "usuario")
-    private List<Perfil> perfiles;
+    private List<PerfilEntity> perfiles;
 }

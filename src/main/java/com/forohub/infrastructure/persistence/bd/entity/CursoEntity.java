@@ -6,18 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "perfil")
-public class Perfil {
+@Table(name = "curso")
+public class CursoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String categoria;
 
-    @ManyToOne
-    private Usuario usuario;
+    //Aqui pongo mis relaciones
+    @OneToMany(mappedBy = "curso")
+    private List<TopicoEntity> topicos;
 }

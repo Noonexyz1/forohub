@@ -43,7 +43,7 @@ public class ForohubAdapter implements ForohubService {
 
     @Override
     public List<Curso> obtenerCursos() {
-        //TODO, hacer el obtener cursos
-        return List.of();
+        List<Curso> listCursos = forohubPersistence.listaDeCursos();
+        return listCursos;
     }
 }

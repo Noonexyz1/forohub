@@ -6,32 +6,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "topico")
-public class Topico {
+@Table(name = "respuesta")
+public class RespuestaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
     private String mensaje;
     private String fechaCreacion;
+    private String solucion;
 
-    //TODO, Quiza un enum
-    private String status;
 
     @ManyToOne
-    private Usuario autor;
+    private TopicoEntity topico;
 
     @ManyToOne
-    private Curso curso;
-
-
-    @OneToMany(mappedBy = "topico")
-    private List<Respuesta> respuestas;
+    private UsuarioEntity autor;
 }
