@@ -2,6 +2,7 @@ package com.forohub.application.adapter;
 
 import com.forohub.application.port.in.ForohubService;
 import com.forohub.application.port.out.persistence.ForohubPersistence;
+import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Topico;
 
 import java.util.List;
@@ -38,5 +39,11 @@ public class ForohubAdapter implements ForohubService {
     @Override
     public void eliminarTopicoPorId(Long id) {
         forohubPersistence.eliminarTopicoPorId(id);
+    }
+
+    @Override
+    public List<Curso> obtenerCursos() {
+        //TODO, hacer el obtener cursos
+        return List.of();
     }
 }
