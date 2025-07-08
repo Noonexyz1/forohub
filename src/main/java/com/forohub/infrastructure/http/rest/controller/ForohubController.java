@@ -1,11 +1,11 @@
-package com.forohub.infrastructure.controller;
+package com.forohub.infrastructure.http.rest.controller;
 
 import com.forohub.application.port.in.ForohubService;
 import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Usuario;
-import com.forohub.infrastructure.mapper.MapperApi;
-import com.forohub.infrastructure.model.UsuarioRes;
-import com.forohub.infrastructure.model.CursoRes;
+import com.forohub.infrastructure.http.rest.mapper.MapperApi;
+import com.forohub.infrastructure.http.rest.model.UsuarioRes;
+import com.forohub.infrastructure.http.rest.model.CursoRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

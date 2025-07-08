@@ -1,4 +1,4 @@
-package com.forohub.infrastructure.mapper;
+package com.forohub.infrastructure.persistence.bd.mapper;
 
 import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Usuario;

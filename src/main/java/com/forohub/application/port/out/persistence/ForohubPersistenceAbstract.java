@@ -6,7 +6,7 @@ import com.forohub.domain.model.Usuario;
 
 import java.util.List;
 
-public interface ForohubPersistence {
+public interface ForohubPersistenceAbstract {
     Topico crearTopico(Topico topico);
     List<Topico> mostrarTopicos();
     Topico mostrarTopicoPorId(Long id);

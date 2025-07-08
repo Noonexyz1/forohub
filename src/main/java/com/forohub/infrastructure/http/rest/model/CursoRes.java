@@ -1,4 +1,4 @@
-package com.forohub.infrastructure.model;
+package com.forohub.infrastructure.http.rest.model;
 
 import lombok.*;
 
@@ -7,7 +7,8 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UsuarioRes {
+public class CursoRes {
     private Long id;
     private String nombre;
+    private String categoria;
 }

@@ -1,10 +1,10 @@
 package com.forohub.infrastructure.persistence.bd.adapter;
 
-import com.forohub.application.port.out.persistence.ForohubPersistence;
+import com.forohub.application.port.out.persistence.ForohubPersistenceAbstract;
 import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Topico;
 import com.forohub.domain.model.Usuario;
-import com.forohub.infrastructure.mapper.MapperPersistence;
+import com.forohub.infrastructure.persistence.bd.mapper.MapperPersistence;
 import com.forohub.infrastructure.persistence.bd.entity.CursoEntity;
 import com.forohub.infrastructure.persistence.bd.entity.UsuarioEntity;
 import com.forohub.infrastructure.persistence.bd.repository.*;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ForohubPersistenceAdapter implements ForohubPersistence {
+public class ForohubPersistenceAdapter implements ForohubPersistenceAbstract {
 
     @Autowired
     private CursoRepository cursoRepository;

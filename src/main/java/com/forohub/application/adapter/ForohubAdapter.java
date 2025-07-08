@@ -1,7 +1,7 @@
 package com.forohub.application.adapter;
 
 import com.forohub.application.port.in.ForohubService;
-import com.forohub.application.port.out.persistence.ForohubPersistence;
+import com.forohub.application.port.out.persistence.ForohubPersistenceAbstract;
 import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Topico;
 import com.forohub.domain.model.Usuario;
@@ -10,47 +10,47 @@ import java.util.List;
 
 public class ForohubAdapter implements ForohubService {
 
-    private final ForohubPersistence forohubPersistence;
+    private final ForohubPersistenceAbstract forohubPersistenceAbstract;
 
-    public ForohubAdapter(ForohubPersistence forohubPersistence) {
-        this.forohubPersistence = forohubPersistence;
+    public ForohubAdapter(ForohubPersistenceAbstract forohubPersistenceAbstract) {
+        this.forohubPersistenceAbstract = forohubPersistenceAbstract;
     }
 
 
     @Override
     public Topico crearTopico(Topico topico) {
-        return forohubPersistence.crearTopico(topico);
+        return forohubPersistenceAbstract.crearTopico(topico);
     }
 
     @Override
     public List<Topico> mostrarTopicos() {
-        return forohubPersistence.mostrarTopicos();
+        return forohubPersistenceAbstract.mostrarTopicos();
     }
 
     @Override
     public Topico mostrarTopicoPorId(Long id) {
-        return forohubPersistence.mostrarTopicoPorId(id);
+        return forohubPersistenceAbstract.mostrarTopicoPorId(id);
     }
 
     @Override
     public Topico actualizarTopico(Topico topico) {
-        return forohubPersistence.actualizarTopico(topico);
+        return forohubPersistenceAbstract.actualizarTopico(topico);
     }
 
     @Override
     public void eliminarTopicoPorId(Long id) {
-        forohubPersistence.eliminarTopicoPorId(id);
+        forohubPersistenceAbstract.eliminarTopicoPorId(id);
     }
 
     @Override
     public List<Curso> obtenerCursos() {
-        List<Curso> listCursos = forohubPersistence.listaDeCursos();
+        List<Curso> listCursos = forohubPersistenceAbstract.listaDeCursos();
         return listCursos;
     }
 
     @Override
     public List<Usuario> obtenerUsuarios() {
-        List<Usuario> listaUsuarios = this.forohubPersistence.listaDeUsuarios();
+        List<Usuario> listaUsuarios = this.forohubPersistenceAbstract.listaDeUsuarios();
         return listaUsuarios;
     }
 }
