@@ -2,7 +2,9 @@ package com.forohub.infrastructure.controller;
 
 import com.forohub.application.port.in.ForohubService;
 import com.forohub.domain.model.Curso;
+import com.forohub.domain.model.Usuario;
 import com.forohub.infrastructure.mapper.MapperApi;
+import com.forohub.infrastructure.model.UsuarioRes;
 import com.forohub.infrastructure.model.CursoRes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,5 +34,14 @@ public class ForohubController {
                 .map(MapperApi::fromCursoToCursoRes)
                 .toList();
         return new ResponseEntity<>(listCursoRes, HttpStatus.OK);
+    }
+
+    @GetMapping("/obtenerUsuarios")
+    public ResponseEntity<List<UsuarioRes>> obtenerUsuarios() {
+        List<Usuario> listaUsuarios = forohubService.obtenerUsuarios();
+        List<UsuarioRes> listaUsuariosRes = listaUsuarios.stream()
+                .map(MapperApi::fromUsuarioToUsuarioRes)
+                .toList();
+        return new ResponseEntity<>(listaUsuariosRes, HttpStatus.OK);
     }
 }

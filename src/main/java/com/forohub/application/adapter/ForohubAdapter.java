@@ -4,6 +4,7 @@ import com.forohub.application.port.in.ForohubService;
 import com.forohub.application.port.out.persistence.ForohubPersistence;
 import com.forohub.domain.model.Curso;
 import com.forohub.domain.model.Topico;
+import com.forohub.domain.model.Usuario;
 
 import java.util.List;
 
@@ -45,5 +46,11 @@ public class ForohubAdapter implements ForohubService {
     public List<Curso> obtenerCursos() {
         List<Curso> listCursos = forohubPersistence.listaDeCursos();
         return listCursos;
+    }
+
+    @Override
+    public List<Usuario> obtenerUsuarios() {
+        List<Usuario> listaUsuarios = this.forohubPersistence.listaDeUsuarios();
+        return listaUsuarios;
     }
 }
